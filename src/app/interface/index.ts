@@ -3,4 +3,6 @@ export interface Product {
   price: number;
   inStock: boolean;
   url: string;
+  sellingArt: number;
+  description: string;
 }

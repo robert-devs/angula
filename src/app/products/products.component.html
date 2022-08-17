@@ -1,1 +1,47 @@
-<p>products works!</p>
+<div [ngSwitch]="day">
+  <p *ngSwitchCase=15>Monday</p>
+  <p *ngSwitchCase=16>Tuesdday</p>
+  <p *ngSwitchCase=17>Wednesday</p>
+  <p *ngSwitchCase=18>Thursday</p>
+  <p *ngSwitchCase=5>Friday</p>
+  <p *ngSwitchCase=6>Satarday</p>
+  <p *ngSwitchCase=7>Sunday</p>
+  <p *ngSwitchDefault=1>No Dy</p>
+
+</div>
+<p>{{company |uppercase}}</p>
+<p>{{date |date :'fullDate'}}</p>
+<div class="products">
+  <label>Product name</label>
+  <input type="text" [(ngModel)]="name">
+  <label>Product url</label>
+  <input type="text" [(ngModel)]="url">
+  <label>Product price</label>
+  <input type="number" [(ngModel)]="price">
+  <button (click)="onAdd()"> Add Product</button>
+
+</div>
+<div class="search">
+  <input type="text" [(ngModel)]="filter" placeholder="Search item..">
+</div>
+
+<div class="container" *ngIf="products.length;else noProduct">
+  <div *ngFor="let product of products;let i =index">
+
+    <div class="card" [ngStyle]="{backgroundColor:!product.inStock ?'red' :''}"
+      [ngClass]="{'color-white':!product.inStock}">
+      <img [src]="product.url" alt="">
+      <h1>{{product.name}}</h1>
+      <p>{{product.price | currency:'KSH':"symbol":"1.0-0"}}</p>
+      <h2>{{product.sellingArt}}</h2>
+      <p>{{product.description}}</p>
+      <p>{{i}}</p>
+    </div>
+
+  </div>
+</div>
+
+
+<ng-template #noProduct>
+  <p>You dont ahve any products</p>
+</ng-template>
