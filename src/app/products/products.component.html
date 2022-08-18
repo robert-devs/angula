@@ -9,32 +9,29 @@
   <p *ngSwitchDefault=1>No Dy</p>
 
 </div>
+
+
+
 <p>{{company |uppercase}}</p>
 <p>{{date |date :'fullDate'}}</p>
-<div class="products">
-  <label>Product name</label>
-  <input type="text" [(ngModel)]="name">
-  <label>Product url</label>
-  <input type="text" [(ngModel)]="url">
-  <label>Product price</label>
-  <input type="number" [(ngModel)]="price">
-  <button (click)="onAdd()"> Add Product</button>
 
-</div>
+
+<!-- Searching A Product -->
 <div class="search">
   <input type="text" [(ngModel)]="filter" placeholder="Search item..">
 </div>
 
+<!-- display -->
 <div class="container" *ngIf="products.length;else noProduct">
-  <div *ngFor="let product of products;let i =index">
+  <div *ngFor="let product of products |searc:filter;let i =index">
 
     <div class="card" [ngStyle]="{backgroundColor:!product.inStock ?'red' :''}"
       [ngClass]="{'color-white':!product.inStock}">
       <img [src]="product.url" alt="">
       <h1>{{product.name}}</h1>
-      <p>{{product.price | currency:'KSH':"symbol":"1.0-0"}}</p>
-      <h2>{{product.sellingArt}}</h2>
-      <p>{{product.description}}</p>
+      <p>{{product.description |shorten:20}}</p>
+      <p>{{product.price | currency:'USD':"symbol":"1.0-0"}}</p>
+      <h2 class="dicsount">-{{getDiscount(product.price,product.sellingArt)|number:'0.2-2'|percent}}</h2>
       <p>{{i}}</p>
     </div>
 
