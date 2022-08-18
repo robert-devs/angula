@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Product } from '../interface';
+import { Product } from '../app/interface';
 
 @Pipe({
   name: 'searc',

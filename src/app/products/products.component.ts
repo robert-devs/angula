@@ -1,5 +1,11 @@
 import { NodeWithI18n } from '@angular/compiler';
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { Product } from '../interface';
 
 @Component({
@@ -7,7 +13,7 @@ import { Product } from '../interface';
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss'],
 })
-export class ProductsComponent {
+export class ProductsComponent implements OnChanges {
   @Input('product') products!: Product[];
   company = 'The Jitu Company';
   date = new Date();
@@ -19,4 +25,6 @@ export class ProductsComponent {
     const diff = price - sellingArt;
     return diff / sellingArt;
   }
+
+  ngOnChanges(changes: SimpleChanges): void {}
 }

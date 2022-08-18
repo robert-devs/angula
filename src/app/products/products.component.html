@@ -1,4 +1,4 @@
-<div [ngSwitch]="day">
+<!-- <div [ngSwitch]="day">
   <p *ngSwitchCase=15>Monday</p>
   <p *ngSwitchCase=16>Tuesdday</p>
   <p *ngSwitchCase=17>Wednesday</p>
@@ -8,20 +8,19 @@
   <p *ngSwitchCase=7>Sunday</p>
   <p *ngSwitchDefault=1>No Dy</p>
 
-</div>
+</div> -->
 
 
 
-<p>{{company |uppercase}}</p>
-<p>{{date |date :'fullDate'}}</p>
+<!-- <p>{{company |uppercase}}</p>
+<p>{{date |date :'fullDate'}}</p> -->
 
-
-<!-- Searching A Product -->
 <div class="search">
   <input type="text" [(ngModel)]="filter" placeholder="Search item..">
 </div>
 
-<!-- display -->
+<p> hello world</p>
+
 <div class="container" *ngIf="products.length;else noProduct">
   <div *ngFor="let product of products |searc:filter;let i =index">
 
