@@ -18,6 +18,7 @@ import { ProductsComponent } from './products/products.component';
     ReversePipe,
     HeaderComponent,
     ProductsComponent,
+
     SearcPipe,
     AddProductComponent,
   ],

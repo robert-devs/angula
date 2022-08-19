@@ -1,17 +1,3 @@
-<!-- <div [ngSwitch]="day">
-  <p *ngSwitchCase=15>Monday</p>
-  <p *ngSwitchCase=16>Tuesdday</p>
-  <p *ngSwitchCase=17>Wednesday</p>
-  <p *ngSwitchCase=18>Thursday</p>
-  <p *ngSwitchCase=5>Friday</p>
-  <p *ngSwitchCase=6>Satarday</p>
-  <p *ngSwitchCase=7>Sunday</p>
-  <p *ngSwitchDefault=1>No Dy</p>
-
-</div> -->
-
-
-
 <!-- <p>{{company |uppercase}}</p>
 <p>{{date |date :'fullDate'}}</p> -->
 
@@ -19,9 +5,9 @@
   <input type="text" [(ngModel)]="filter" placeholder="Search item..">
 </div>
 
-<p> hello world</p>
 
-<div class="container" *ngIf="products.length;else noProduct">
+
+<div class="container" *ngIf="products.length;">
   <div *ngFor="let product of products |searc:filter;let i =index">
 
     <div class="card" [ngStyle]="{backgroundColor:!product.inStock ?'red' :''}"
@@ -38,6 +24,7 @@
 </div>
 
 
-<ng-template #noProduct>
+
+<!-- <ng-template #noProduct>
   <p>You dont ahve any products</p>
-</ng-template>
+</ng-template> -->
