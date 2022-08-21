@@ -1,10 +1,13 @@
 <div class="products">
   <label>Product name</label>
-  <input type="text" [(ngModel)]="name">
+  <input type="text" [(ngModel)]="product.name">
   <label>Product url</label>
-  <input type="text" [(ngModel)]="url">
+  <input type="text" [(ngModel)]="product.url">
+  <label>Product description</label>
+  <input type="text" [(ngModel)]="product.description">
   <label>Product price</label>
-  <input type="number" [(ngModel)]="price">
-  <button (click)="onAdd()"> Add Product</button>
+  <input type="number" [(ngModel)]="product.price">
+  <button [ngStyle]="{backgroundColor:update?'#23a6f0 ':''}" (click)="onAdd()">
+    {{update? "update":"Add Product"}}Product</button>
 
 </div>

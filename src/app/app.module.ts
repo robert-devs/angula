@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SearcPipe } from '../PIPES/searc.pipe';
 import { ProductsComponent } from './products/products.component';
+import { LoggerServices } from './Logger.service';
+import { ProductService } from './product.service';
 
 @NgModule({
   declarations: [

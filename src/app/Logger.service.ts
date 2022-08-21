@@ -1,5 +1,10 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root',
+})
 export class LoggerServices {
-  log() {
-    console.log('hello world');
+  log(name: string) {
+    console.log('hello world' + name);
   }
 }
